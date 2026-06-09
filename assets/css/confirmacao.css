@@ -11,12 +11,12 @@
     box-sizing: border-box;
 }
 :root {
-    --cor0:#EBD7FC;
-    --cor1: #EBD7FC;
-    --cor2:#775296;
-    --cor3: #472663;
-    --cor4: #1F0833;
-    --cor5: #ebd7fc8e;
+    --cor0:#92A8D1;  
+    --cor1: #8E949E;
+    --cor2: #4B566B;
+    --cor3: #1C2638;
+    --cor4: #0F1C33;
+    --cor5: #92a8d16e;
 
     --fonte-romantic: "Parisienne", cursive;
     --fonte-romantic2: "Great Vibes", cursive;
@@ -48,7 +48,7 @@ html, body {
 .title-information {
     text-align: center;
     font-size: 1.2em;
-    color: var(--cor3);
+    color: var(--cor2);
     font-family: var(--fonte-titulos);
     font-style: italic;
 }
@@ -65,11 +65,11 @@ html, body {
 }
 .timer-content {
     font-size: 3.5em;
-    color: var(--cor2);
+    color: var(--cor3);
     font-family: var(--fonte-titulos);
 }
 .legenda-timer{
-    color: var(--cor4);
+    color: var(--cor3);
     font-family: var(--fonte-romantic2);
 }
 .legenda-information {
@@ -123,12 +123,12 @@ html, body {
 .btn-event {
     border-radius: 7px;
     font-family: var(--fonte-texto);
-    background-color: var(--cor1);
+    background-color: var(--cor0);
     color: var(--cor4);
     padding: 10px 20px;
     text-decoration: none;
     transition: 0.3s;
-    box-shadow: 1px 1px 6px 2px #1f083339;
+    box-shadow: 1px 1px 6px 2px #0f1c3350;
 }
 .btn-event:hover{
     transform: scale(1.1);
@@ -148,7 +148,7 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--cor0);
+    background-color: var(--cor2);
     padding: 20px;
     border-radius: 20px;
 }
@@ -162,14 +162,14 @@ html, body {
     align-items: center;
     justify-content: center;
     margin: 20px 0px;
-    color: var(--cor2);
+    color: var(--cor4);
     font-size: 1.3rem;
 }
 .ornamento::before, .ornamento::after {
     content:"";
     width: 150px;
     height: 1px;
-    background-color: rgba(119, 82, 150, 0.4);
+    background-color: #0F1C33;
 }
 .ornamento::before {
     margin-right: 12px;
@@ -205,16 +205,17 @@ html, body {
     padding: 20px;
     border: none;
     border-radius: 8px;
-    background-color: var(--cor2);
+    background-color: var(--cor4);
     color: white;
     font-family: var(--fonte-texto);
     font-style: italic;
     font-weight: bolder;
     font-size: 1em;
     cursor: pointer;
-    transform: 0.3s;
+    transition: 0.3s;
 }
 .btn-form:hover {
-    background-color: var(--cor3);
+    background-color: var(--cor5);
     transform: scale(1.05);
+    
 }

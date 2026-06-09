@@ -16,7 +16,7 @@
     --cor2: #4B566B;
     --cor3: #1C2638;
     --cor4: #0F1C33;
-    --cor5: #ebd7fc8e;
+    --cor5: #92a8d16e;
 
     --fonte-romantic: "Parisienne", cursive;
     --fonte-romantic2: "Great Vibes", cursive;
@@ -47,7 +47,7 @@ html, body {
 }
 
 .hero-section:hover .overlay {
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
 .header {
@@ -103,7 +103,7 @@ html, body {
 
 .hero-content p {
     font-family: var(--fonte-romantic2);
-    color:var(--cor1);
+    color: var(--cor1);
     font-size: 2em;
 }
 
@@ -130,14 +130,35 @@ html, body {
     justify-content: center;
     width: 100%;
     height: 100px;
-    margin-top: 20px;
-    padding: 20px;
+    margin-top: 10px;
+    padding: 20px 20px 0px 20px;
 }
 
 .title-story h1 {
     font-family: var(--fonte-romantic);
     color: var(--cor4);
     font-size: 3em;
+}
+
+.ornamento {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0px;
+    color: var(--cor4);
+    font-size: 1.3rem;
+}
+.ornamento::before, .ornamento::after {
+    content:"";
+    width: 150px;
+    height: 1px;
+    background-color: #0F1C33;
+}
+.ornamento::before {
+    margin-right: 12px;
+}
+.ornamento::after {
+    margin-left: 12px;
 }
 
 .story-text {
@@ -212,6 +233,7 @@ html, body {
     align-items: center;
     margin-top: 30px;
     margin-right:80px;
+    margin-bottom: 20px;
     height: 50px;
     
 }
@@ -219,8 +241,8 @@ html, body {
     font-family: var(--fonte-titulos);
     font-weight: bold;
     border-radius: 5px;
-    background-color: #775296;
-    color: var(--cor0);
+    background-color: var(--cor0);
+    color: var(--cor3);
     padding: 20px 40px;
     text-decoration: none;
     transition: 0.3s;

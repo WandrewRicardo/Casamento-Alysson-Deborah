@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --cor0:#92A8D1;  
+    --cor1: #8E949E;
+    --cor2: #4B566B;
+    --cor3: #1C2638;
+    --cor4: #0F1C33;
+    --cor5: #92a8d16e;
+
+    --fonte-romantic: "Parisienne", cursive;
+    --fonte-romantic2: "Great Vibes", cursive;
+    --fonte-titulos: "Playfair Display", serif;
+    --fonte-texto: "Inter", sans-serif;
+}
+html,body {
+    height: 100%;
+}
