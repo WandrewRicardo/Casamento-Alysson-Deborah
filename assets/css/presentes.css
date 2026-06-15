@@ -115,7 +115,7 @@ html,body {
     font-size: 60px !important;
     vertical-align: middle !important;
 }
-.text-alert h2 {
+.text-alert h3 {
     color: var(--cor3);
     font-family: var(--fonte-titulos);
     
@@ -125,4 +125,46 @@ html,body {
     color: var(--cor4);
     font-family: var(--fonte-texto);
     line-height: 1.1;
+}
+.title-content {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 20px;
+    padding: 20px;
+}
+.title-lista {
+    font-family: var(--fonte-titulos);
+    font-style: italic;
+    color: var(--cor4);
+}
+.text-lista {
+    font-family: var(--fonte-texto);
+    color: var(--cor4);
+    font-size: 1.2em;
+}
+.ornamento {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0px;
+    color: var(--cor4);
+    font-size: 1.3rem;
+}
+.ornamento::before, .ornamento::after {
+    content:"";
+    width: 150px;
+    height: 1px;
+    background-color: #0F1C33;
+}
+.ornamento::before {
+    margin-right: 12px;
+}
+.ornamento::after {
+    margin-left: 12px;
+}
+.card-presentes {
+    
 }
