@@ -39,9 +39,18 @@ html,body {
     flex-direction: column;
     align-items: center;
     box-shadow: 3px 3px 4px 1px #0f1c3355;;
-    
+    position: relative;
 }
 .nav-bar {
+    display: flex;
+}
+.menu-hamburguer {
+    display: none;
+}
+.btn-menu {
+    background-color: var(--cor2);
+}
+.nav-items {
     display: flex;
     flex-direction: row;
     gap: 30px;
@@ -277,4 +286,84 @@ html,body {
     color: var(--cor4);
     font-family: var(--fonte-texto);
     font-size: 0.8em;
+}
+
+
+@media (max-width: 900px) {
+.grid-presentes {
+grid-template-columns: repeat(2, 1fr); 
+justify-items: center; 
+}
+.destaque-title {
+    font-size: 3.5em;
+}
+.funcionamento-box {
+    flex-direction: column; 
+    gap: 20px;
+}
+.next-etapa .material-symbols-rounded {
+    transform: rotate(90deg); 
+}
+.next-etapa {
+    justify-content: center;
+}
+}
+
+@media (max-width: 600px) {
+.nav-bar {
+    width: 100%;
+    justify-content: flex-start; /* CORREÇÃO: Posiciona no canto esquerdo */
+    padding: 10px 20px;
+}
+.nav-items {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0px;
+    width: 100%;
+    background-color: var(--cor4);
+    padding: 20px;
+    gap: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+.nav-items.active {
+    display: flex;
+}
+.menu-hamburguer {
+    display: block;
+    margin-top: 15px;
+}
+.btn-menu {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.btn-menu .material-symbols-rounded {
+    color: var(--cor0);
+    font-size: 40px !important;
+}
+.presentes-header {
+    height: auto;
+    padding-bottom: 25px;
+}
+.title-presentes {
+    font-size: 2em; 
+}
+.destaque-title { 
+    font-size: 2.8em;
+}
+.alert-presentes {
+    flex-direction: column; 
+    text-align: center;
+    gap: 15px;
+    padding: 20px;
+    margin: 20px;
+}
+.grid-presentes {
+    grid-template-columns: 1fr; 
+    padding: 0px 20px;
+}
 }

@@ -241,8 +241,8 @@ html, body {
     font-family: var(--fonte-titulos);
     font-weight: bold;
     border-radius: 5px;
-    background-color: var(--cor0);
-    color: var(--cor3);
+    background-color: var(--cor4);
+    color: white;
     padding: 20px 40px;
     text-decoration: none;
     transition: 0.3s;
@@ -250,6 +250,6 @@ html, body {
 }
 .btn-rsvp:hover{
     transform: scale(1.1);
-    background-color: var(--cor3);
-    color: var(--cor0);
+    background-color: var(--cor0);
+   
 }

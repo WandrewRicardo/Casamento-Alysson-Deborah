@@ -123,7 +123,7 @@ html, body {
 .btn-event {
     border-radius: 7px;
     font-family: var(--fonte-texto);
-    background-color: var(--cor4);
+    background-color: var(--cor2);
     color: white;
     padding: 10px 20px;
     text-decoration: none;
