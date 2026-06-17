@@ -268,8 +268,24 @@ html, body {
 }
 
 @media (max-width : 900px) {
+    .hero-content h1 {
+        font-size: 3.8em;
+    }
+    .hero-content p {
+        font-size: 1.8em;
+    }
+    .polaroids-content {
+        flex-wrap: wrap; 
+        gap: 20px; 
+        padding: 0 20px;
+    }
+    .polaroide:not(:first-child) {
+        margin-left: -30px; 
+    }
     .rsvp-content {
-        margin-top: 60px;
+        justify-content: center; 
+        margin-right: 0;
+        margin-top: 50px;
     }
 }
 
@@ -342,10 +358,50 @@ html, body {
     .btn-close.active {
         display: block !important;
     }
+    .hero-content {
+        width: 100%;
+        padding: 0 20px;
+        top: 65%; 
+    }
     .hero-content h1 {
-        font-size: 2.5em;
+        font-size: 2.8em;
     }
     .hero-content p {
-        font-size: 1.5em;
+        font-size: 1.8em;
+    }
+    .title-story {
+        padding: 60px 20px 0px 20px; 
+    }
+    .title-story h1 {
+        font-size: 2.5em;
+    }
+    .story-text {
+        max-width: 100%; 
+        padding: 10px 25px;
+    }
+    .polaroids-content {
+        flex-direction: column; 
+        gap: 40px; 
+        margin-top: 40px;
+    }
+    .polaroide:not(:first-child) {
+        margin-left: 0; 
+    }
+    .polaroide {
+        width: 260px; 
+    }
+    .polaroide:hover {
+        transform: scale(1.1) rotate(0deg) !important; 
+    }
+    .rsvp-content {
+        margin-right: 0;
+        justify-content: center;
+        margin-top: 70px;
+        width: 100%;
+        padding: 0 20px;
+    }
+    .btn-rsvp { 
+        text-align: center;
+        padding: 20px 50px;
     }
 }
