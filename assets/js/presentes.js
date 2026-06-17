@@ -1,6 +1,9 @@
-const btnMenu = document.querySelector('.btn-menu');
-const navItems = document.querySelector('.nav-items');
+function menuHamburguer() {
+    const btnMenu = document.querySelector('.btn-menu');
+    const navItems = document.querySelector('.nav-items');
 
-btnMenu.addEventListener('click', () => {
-    navItems.classList.toggle('active')
-});
+    btnMenu.addEventListener('click', () => {
+        navItems.classList.toggle('active')
+    });
+}
+menuHamburguer();

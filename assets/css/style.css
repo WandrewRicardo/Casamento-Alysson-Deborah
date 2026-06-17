@@ -78,8 +78,14 @@ html, body {
     font-style: italic;
     padding:10px;
     margin-left: 10px;
+    border-radius: 8px;
+    transition: 0.2s;
 }
 
+.nav-item:hover {
+    background: var(--cor3);
+    transform: scale(1.05);
+}
 .menu-hamburguer {
     display: none
    

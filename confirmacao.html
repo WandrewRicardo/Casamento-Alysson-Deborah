@@ -9,6 +9,20 @@
     
 </head>
 <body>
+    <header class="header">
+        <nav class="nav-bar">
+            <div class="menu-hamburguer">
+                <button class="btn-menu"><span class="material-symbols-rounded">menu</span></button>
+            </div>
+            <div class="nav-items">
+                <button class="btn-close"><span class="material-symbols-rounded">close</span></button>
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="#" class="nav-item">História</a>
+                <a href="confirmacao.html" class="nav-item">Confirmação</a>
+                <a href="presentes.html" class="nav-item">Lista de Presentes</a>
+            </div>
+        </nav>
+    </header>
     <section class="confirmacao-section">
         <div class="information-zone">
             <div class="information-content">
@@ -18,19 +32,19 @@
                 <div class="contador">
                 
                     <div class="timer">
-                        <span class="timer-content">256</span>
+                        <span class="timer-content" id="dias">00</span>
                         <span class="legenda-timer"> Dias</span>
                     </div>
                     <div class="timer">
-                        <span class="timer-content">12</span>
+                        <span class="timer-content" id="horas">00</span>
                         <span class="legenda-timer">Horas</span>
                     </div>
                     <div class="timer">
-                        <span class="timer-content">36</span>
+                        <span class="timer-content" id="minutos">00</span>
                         <span class="legenda-timer">Minutos</span>
                     </div>
                     <div class="timer">
-                        <span class="timer-content">48</span>
+                        <span class="timer-content" id="segundos">00</span>
                         <span class="legenda-timer">Segundos</span>
                     </div>
                     
@@ -75,6 +89,7 @@
                     <div class="btn-content">
                         <a href="https://maps.app.goo.gl/ws7dJ1mMSoT5qXmMA" class="btn-event" target="_blank">VER NO MAPA</a>
                     </div>
+                </div>
             </div>
         </div>
         <div class="form-zone">
@@ -86,12 +101,13 @@
                     ♡
                 </div> 
                 <form class="form-rsvp">
-                    <input type="text" placeholder="Nome Completo" class="campo-form">
+                    <input type="text" placeholder="Nome" class="campo-form">
                     <input type="text" placeholder="Número do Convite" class="campo-form">
                     <button type="submit" class="btn-form"> Confirmar Presença</button>
                 </form>
             </div>
         </div>
     </section>
+    <script src="assets/js/confirmacao.js"></script>
 </body>
 </html>
