@@ -63,8 +63,9 @@ html,body {
 .nav-items {
     display: flex;
     flex-direction: row;
-    gap: 30px;
-    padding: 5px;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 40px;
 }
 .nav-item {
     text-decoration: none;

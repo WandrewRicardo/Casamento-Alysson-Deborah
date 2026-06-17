@@ -276,7 +276,7 @@ html, body {
 @media (max-width : 600px) {
     .nav-bar {
         justify-content: flex-start;
-        padding: 15px;
+        padding: 15;
     }
     .nav-items {
         display: none;
@@ -342,5 +342,10 @@ html, body {
     .btn-close.active {
         display: block !important;
     }
-
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+    .hero-content p {
+        font-size: 1.5em;
+    }
 }
