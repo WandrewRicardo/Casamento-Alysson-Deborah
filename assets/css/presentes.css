@@ -34,7 +34,7 @@ html,body {
 .presentes-header {
     background-color: var(--cor4);
     width: 100%;
-    height: 250px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,8 +43,18 @@ html,body {
 }
 .nav-bar {
     display: flex;
+    background-color: var(--cor4);
+    width: 100%;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 2px 2px 4px #0f1c3369;
 }
 .menu-hamburguer {
+    display: none;
+}
+.btn-close {
     display: none;
 }
 .btn-menu {
@@ -312,42 +322,76 @@ justify-items: center;
 @media (max-width: 600px) {
 .nav-bar {
     width: 100%;
-    justify-content: flex-start; 
-    padding: 10px 20px;
+    justify-content: flex-start;
+    padding: 15px;
 }
 .nav-items {
     display: none;
     flex-direction: column;
-    position: absolute;
-    top: 70px;
-    left: 0px;
-    width: 100%;
-    background-color: var(--cor4);
+    align-items: flex-start;
+    justify-content: flex-start;
     padding: 20px;
-    gap: 15px;
-    text-align: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
+    position: fixed;
+    top:0;
+    left: 0;
+    height:100vh;
+    width: 280px;
+    z-index: 999;
+    background-color: #8e949e2e;
+    backdrop-filter: blur(10px);
+}
+.nav-item {
+    color: var(--cor4);
+    font-weight: bolder;
+    font-size: 1.4em;
+}
+.nav-item:hover {
+    background-color: var(--cor2);
 }
 .nav-items.active {
     display: flex;
 }
 .menu-hamburguer {
+    display: block; 
+}
+.btn-close {
     display: block;
-    margin-top: 15px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+    border-radius: 6px;
+}
+.btn-close:hover {
+    transform: scale(1.05);
+    background-color: var(--cor2);
+}
+.btn-close .material-symbols-rounded {
+    color: var(--cor4); 
+    font-size: 50px !important;
+}
+.btn-close.active {
+    display: block !important;
 }
 .btn-menu {
     background-color: transparent;
     border: none;
     cursor: pointer;
+    border-radius: 4px;
+    transition: 0.2s;
 }
 .btn-menu .material-symbols-rounded {
-    color: var(--cor0);
-    font-size: 40px !important;
+color: var(--cor0);
+font-size: 40px !important;
+}
+.btn-menu:hover {
+    transform: scale(1.05);
+    background-color: var(--cor3);
 }
 .presentes-header {
     height: auto;
     padding-bottom: 25px;
+    margin-top: -1px;
 }
 .title-presentes {
     font-size: 2em; 
