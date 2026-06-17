@@ -68,10 +68,13 @@ html,body {
 }
 .nav-item {
     text-decoration: none;
-    color: var(--cor0);
-    font-size: 1.2em;
-    padding: 10px 15px;
-    border-radius: 5px;
+    font-size: 1.4em;
+    color: var(--cor1);   
+    font-family: var(--fonte-titulos);
+    font-style: italic;
+    padding:10px;
+    margin-left: 10px;
+    border-radius: 8px;
     transition: 0.2s;
 }
 .nav-item:hover{
@@ -79,7 +82,7 @@ html,body {
     background-color: var(--cor3);
 }
 .title-presentes {
-    color: var(--cor0);
+    color: var(--cor1);
     font-size: 2.6em;
     font-family: var(--fonte-romantic2);
     font-style: italic;
@@ -87,7 +90,7 @@ html,body {
     text-shadow: 1px 2px 1px #92a8d160;;
 }
 .destaque-title {
-    color: var(--cor0);
+    color: var(--cor1);
     font-size: 5em;
     font-family: var(--fonte-romantic2);
     text-shadow: 1px 2px 1px #92a8d160;
@@ -337,11 +340,11 @@ justify-items: center;
     height:100vh;
     width: 280px;
     z-index: 999;
-    background-color: #8e949e2e;
+    background-color: #0f1c337d;
     backdrop-filter: blur(10px);
 }
 .nav-item {
-    color: var(--cor4);
+    color: var(--cor1);
     font-weight: bolder;
     font-size: 1.4em;
 }
@@ -367,8 +370,9 @@ justify-items: center;
     background-color: var(--cor2);
 }
 .btn-close .material-symbols-rounded {
-    color: var(--cor4); 
+    color: var(--cor2); 
     font-size: 50px !important;
+    font-weight: bolder;
 }
 .btn-close.active {
     display: block !important;

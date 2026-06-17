@@ -41,12 +41,10 @@ function menuHamburguer() {
 
     btnMenu.addEventListener('click', () => {
         navItems.classList.toggle('active');
-        btnClose.classList.toggle('active');
     });
-
+    
     btnClose.addEventListener('click', ()=>{
         navItems.classList.remove('active');
-        btnClose.classList.remove('active');
     });
 }
 
