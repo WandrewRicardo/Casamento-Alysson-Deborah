@@ -48,6 +48,28 @@ function menuHamburguer() {
     });
 }
 
+function submitFormulario(){
+    const formulario = document.querySelector('.form-rsvp')
+    const campoNome = document.getElementById('nome')
+    const campoNumero_Convite = document.getElementById('numero-convite')
+
+    formulario.addEventListener('submit', (event) => {
+        event.preventDefault()
+
+        const nome = campoNome.value
+        const numero_convite = campoNumero_Convite.value
+        
+        objJSON = {nome, numero_convite}
+
+        fetch('/rsvp',{
+            method:'POST',
+            headers: {'Content-Type' : 'application/json'},
+            body: JSON.stringify(objJSON)
+        })
+    })
+}
 
 menuHamburguer();
 contadorCasamento();
+submitFormulario();
+

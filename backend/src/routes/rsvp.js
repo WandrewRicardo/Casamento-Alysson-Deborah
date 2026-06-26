@@ -1,30 +1,37 @@
-const poll = require ('../db/index')
+const pool = require ('../db/index')
 
 async function rsvpRoute(req, res) {
-    let body = ''
-
-    req.on('data', (chunk) => {
-        body += chunk.toString()
+    const {nome, numero_convite} = req.body
+    if (!nome.trim() || !numero_convite.trim()) {
+        return res.status(400).json({
+            mensagem: "TODOS OS CAMPOS SÂO OBRIGATÓRIOS"
+        })     
+    }
+    const convites = await pool.query (
+        'SELECT * FROM convites WHERE numero_convite = $1', [numero_convite]
+    )
+    console.log(convites.rows)
+    if (convites.rows.length == 0) {
+        return res.status(404).json({
+            mensagem: "Convite não encontrado"
+        })
+    }
+    const confirmacoes = await pool.query(
+        'SELECT * FROM confirmacoes WHERE convite_id = $1',[convites.rows[0].id]
+    )
+     if(confirmacoes.rows.length === 1) {
+        return res.status(409).json({
+            mensagem: "Convite já foi registrado"
+        })
+     }else {
+        await pool.query(
+            'INSERT INTO confirmacoes (convite_id, nome) VALUES ($1, $2)',[convites.rows[0].id, nome]
+        )
+     }
+    return res.status(200).json({
+        mensagem: "Dados recebidos com Sucesso!"
     })
 
-    req.on('end', async ()=> {
-        const {nome, numero_convite} = JSON.parse(body)
-
-        const convites = await poll.query (
-            'SELECT * FROM convites WHERE numero_convite = $1', [numero_convite]
-        )
-        if (convites.rows.length === 0) {
-            res.writeHead(404, {'Content-Type' : 'application/json'})
-            res.end (JSON.stringfy ({mensagem: 'Convite não encontrado'}))
-            return
-        }
-        await pool.query (
-            'INSERT INTO confirmacoes (convite_id, nome) VALUES ($1, $2)', [convites.rows[0].id, nome]
-        )
-
-        res.writeHead(201, {'Content-Type' : 'application/json'})
-        res.end(JSON.stringify({mensagem: 'Presença confirmada com sucesso!'}))
-    })
 }
 
 module.exports = rsvpRoute
