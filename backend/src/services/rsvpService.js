@@ -8,21 +8,39 @@ async function confirmarPresenca (nome, numero_convite) {
             mensagem: "TODOS OS CAMPOS SÃO OBRIGATÓRIOS"
         }
     }
-    const convite = await rsvpRepository.buscarConvite(numero_convite)
-    if (convite.rows.length === 0) {
-        return {
-            status: 404,
-            mensagem: "Convite não encontrado"
+
+    let convite
+    let confirmacao
+    try{
+        convite = await rsvpRepository.buscarConvite(numero_convite)
+        
+        if (convite.rows.length === 0) {
+            return {
+                status: 404,
+                mensagem: "Convite não encontrado"
+            }
         }
-    }
-    const confirmacao = await rsvpRepository.buscarConfirmacao(convite.rows[0].id)
-    if (confirmacao.rows.length === 1) {
-        return {
-            status: 409,
-            mensagem: "Convite já foi registrado"
+        
+        confirmacao = await rsvpRepository.buscarConfirmacao(convite.rows[0].id)
+
+        if (confirmacao.rows.length === 1) {
+            return {
+                status: 409,
+                mensagem: "Convite já foi registrado"
+            }
+
         }
-    }else {
+
         await rsvpRepository.adicionarConfirmacao(convite.rows[0].id, nome)
+        
+    }catch (erro) {
+
+        console.error(erro)
+        
+        return {
+            status: 500,
+            mensagem: "Erro ao acessar Banco de Dados"
+        }
     }
 
     return {

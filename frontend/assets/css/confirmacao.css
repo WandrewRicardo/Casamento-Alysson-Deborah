@@ -279,6 +279,19 @@ header {
     background-color: var(--cor0);
     transform: scale(1.05);
 }
+.mensagem-server {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bolder;
+    margin-top: 10px;
+    font-family: var(--fonte-texto);
+    }
+.sucesso {
+    color: green;
+}
+.erro {  
+    color: red;
+}
 
 @media(max-width: 900px) {
     html, body {
@@ -442,6 +455,7 @@ header {
         text-align: center;
     }
     .campo-form{
-    height: 45px;
+        height: 45px;
     }
+    
 }

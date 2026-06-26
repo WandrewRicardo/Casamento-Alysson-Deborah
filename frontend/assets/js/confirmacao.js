@@ -1,4 +1,5 @@
 function contadorCasamento(){
+
     const dataCasamento = new Date (2026, 11, 5, 18, 0, 0).getTime();
 
     const marcadorDias = document.getElementById('dias');
@@ -7,6 +8,7 @@ function contadorCasamento(){
     const marcadorSegundos = document.getElementById('segundos');
 
     function atualizarContador(){
+
         const agora = new Date().getTime();
         const diferenca = dataCasamento - agora;
 
@@ -30,8 +32,10 @@ function contadorCasamento(){
         marcadorSegundos.innerText = segundos < 10 ? '0' + segundos : segundos;
 
     };
+
     atualizarContador();
     const intervalo = setInterval(atualizarContador, 100);
+
 };
 
 function menuHamburguer() {
@@ -41,31 +45,47 @@ function menuHamburguer() {
 
     btnMenu.addEventListener('click', () => {
         navItems.classList.toggle('active');
+
     });
     
     btnClose.addEventListener('click', ()=>{
         navItems.classList.remove('active');
     });
+
 }
 
 function submitFormulario(){
+
     const formulario = document.querySelector('.form-rsvp')
     const campoNome = document.getElementById('nome')
     const campoNumero_Convite = document.getElementById('numero-convite')
+    const mensagemServer = document.querySelector('.mensagem-server')
 
-    formulario.addEventListener('submit', (event) => {
+
+    formulario.addEventListener('submit', async (event) => {
         event.preventDefault()
 
         const nome = campoNome.value
         const numero_convite = campoNumero_Convite.value
         
-        objJSON = {nome, numero_convite}
+        const objJSON = {nome, numero_convite}
 
-        fetch('/rsvp',{
+        const response = await fetch('/rsvp',{
             method:'POST',
             headers: {'Content-Type' : 'application/json'},
             body: JSON.stringify(objJSON)
         })
+
+        const dados = await response.json()
+
+        mensagemServer.textContent = dados.mensagem 
+        if (response.ok ) {
+            mensagemServer.classList.remove('erro')
+            mensagemServer.classList.add('sucesso')
+        }else{
+            mensagemServer.classList.remove('sucesso')
+            mensagemServer.classList.add('erro')
+        }
     })
 }
 

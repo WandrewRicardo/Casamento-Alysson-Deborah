@@ -2,6 +2,7 @@ const pool = require('../db/index.js')
 
 
 async function buscarConvite (numero_convite) {
+
    const convite = await pool.query(
         'SELECT * FROM convites WHERE numero_convite = $1', [numero_convite]
     )
@@ -9,6 +10,7 @@ async function buscarConvite (numero_convite) {
  }
 
 async function buscarConfirmacao (convite_id) {
+    
     const confirmacao = await pool.query(
         'SELECT * FROM confirmacoes WHERE convite_id = $1',[convite_id]
     )
