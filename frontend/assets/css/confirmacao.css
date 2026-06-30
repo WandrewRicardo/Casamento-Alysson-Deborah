@@ -281,10 +281,11 @@ header {
 }
 .mensagem-server {
     text-align: center;
-    font-size: 1.4em;
-    font-weight: bolder;
+    font-size: 1.2em;
+    font-weight: normal;
     margin-top: 10px;
     font-family: var(--fonte-texto);
+    font-style: italic;
     }
 .sucesso {
     color: green;

@@ -1,3 +1,4 @@
+console.log(Swal)
 function contadorCasamento(){
 
     const dataCasamento = new Date (2026, 11, 5, 18, 0, 0).getTime();
