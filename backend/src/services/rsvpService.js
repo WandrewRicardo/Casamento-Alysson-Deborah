@@ -45,7 +45,7 @@ async function confirmarPresenca (nome, numero_convite) {
 
     return {
         status: 200,
-        mensagem: "Dados recebidos com sucesso"
+        mensagem: "Você é muito importante para esse momento!"
     }
 
 }

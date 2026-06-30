@@ -1,4 +1,3 @@
-console.log(Swal)
 function contadorCasamento(){
 
     const dataCasamento = new Date (2026, 11, 5, 18, 0, 0).getTime();
@@ -65,7 +64,7 @@ function submitFormulario(){
 
     formulario.addEventListener('submit', async (event) => {
         event.preventDefault()
-
+        
         const nome = campoNome.value
         const numero_convite = campoNumero_Convite.value
         
@@ -78,14 +77,24 @@ function submitFormulario(){
         })
 
         const dados = await response.json()
-
-        mensagemServer.textContent = dados.mensagem 
+        
         if (response.ok ) {
-            mensagemServer.classList.remove('erro')
-            mensagemServer.classList.add('sucesso')
+            Swal.fire({
+                title: 'Prenseça confirmada!',
+                text: dados.mensagem,
+                icon: 'success',
+                iconColor: '#0f1c33',
+                confirmButtonText: 'Seguir para lista de presentes',
+                confirmButtonColor: '#0f1c33'
+            })
         }else{
-            mensagemServer.classList.remove('sucesso')
-            mensagemServer.classList.add('erro')
+            Swal.fire({
+                title: 'Campos Inválidos!',
+                text: dados.mensagem,
+                icon: 'error',
+                iconColor: '#0f1c33',
+                confirmButtonColor: '#0f1c33'
+            })
         }
     })
 }
