@@ -12,4 +12,13 @@ function menuHamburguer() {
         btnClose.classList.remove('active');
     });
 }
+function reservaPresenntes () {
+    const btnReservar = document.querySelector('.btn-reservar')
+
+    btnReservar.addEventListener('click', async (event) => {
+        event.preventDefault();
+    });
+}
+
+reservaPresenntes();
 menuHamburguer();

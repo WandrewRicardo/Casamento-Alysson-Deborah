@@ -25,7 +25,7 @@ async function confirmarPresenca (nome, numero_convite) {
 
         if (confirmacao.rows.length === 1) {
             return {
-                status: 409,
+                status: 200,
                 mensagem: "Convite já foi registrado"
             }
 

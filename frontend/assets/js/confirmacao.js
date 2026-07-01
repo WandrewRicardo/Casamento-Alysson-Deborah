@@ -59,7 +59,6 @@ function submitFormulario(){
     const formulario = document.querySelector('.form-rsvp')
     const campoNome = document.getElementById('nome')
     const campoNumero_Convite = document.getElementById('numero-convite')
-    const mensagemServer = document.querySelector('.mensagem-server')
 
 
     formulario.addEventListener('submit', async (event) => {
@@ -79,7 +78,7 @@ function submitFormulario(){
         const dados = await response.json()
         
         if (response.ok ) {
-            Swal.fire({
+            const confirmacaoPresenca = await Swal.fire({
                 title: 'Prenseça confirmada!',
                 text: dados.mensagem,
                 icon: 'success',
@@ -87,6 +86,8 @@ function submitFormulario(){
                 confirmButtonText: 'Seguir para lista de presentes',
                 confirmButtonColor: '#0f1c33'
             })
+            if (confirmacaoPresenca.isConfirmed) 
+                window.location.href = '/presentes'
         }else{
             Swal.fire({
                 title: 'Campos Inválidos!',
